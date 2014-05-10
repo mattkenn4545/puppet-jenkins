@@ -1,3 +1,5 @@
 class jenkins::service {
-  service { "jenkins": ensure => running }
+  service { 'jenkins':
+    ensure => running
+  }
 }

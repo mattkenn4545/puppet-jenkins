@@ -1,14 +1,14 @@
 class jenkins(
-  $url,
-  $email_address,
-  $slaves,
-  $views
+  $url            = $fqdn,
+  $email_address  = "ci@${domain}",
+  $views          = {},
+  $slaves         = []
 ) {
-  class { "jenkins::files":
-    url => $url,
-    email_address => $email_address,
-    slaves => $slaves,
-    views => $views
+  class { 'jenkins::files':
+    url             => $url,
+    email_address   => $email_address,
+    slaves          => $slaves,
+    views           => $views
   }
 
   include jenkins::files
